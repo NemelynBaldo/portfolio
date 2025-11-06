@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base styles: pure monochrome, generous spacing, smooth transitions */
+:root {
+  --bg: 255 255 255;
+  --fg: 11 11 11;
+}
+
+.dark {
+  --bg: 11 11 11;
+  --fg: 245 245 245;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  @apply bg-[rgb(var(--bg))] text-[rgb(var(--fg))] transition-colors duration-500 ease-in-out;
+}
+
+/* Typography rhythm */
+@layer base {
+  h1 { @apply text-4xl md:text-6xl font-semibold tracking-tight; }
+  h2 { @apply text-3xl md:text-4xl font-semibold tracking-tight; }
+  h3 { @apply text-2xl md:text-3xl font-medium; }
+  p  { @apply leading-relaxed; }
+  a  { @apply underline-offset-4 hover:underline; }
+}
+
+/* Utilities */
+.container-px {
+  @apply px-6 md:px-12 lg:px-16;
+}
